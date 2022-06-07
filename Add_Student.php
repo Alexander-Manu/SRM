@@ -61,7 +61,7 @@
         </li>
         <li class="nav-item dropdown  fst-italic">
           <a class="nav-link dropdown-toggle  active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Manage Students
+            Manage Studentsss
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="Add_Student.php">Add Student</a></li>
