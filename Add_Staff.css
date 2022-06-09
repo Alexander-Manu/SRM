@@ -69,3 +69,11 @@ body{
 label{
   font-weight: bold;
 }
+
+.formdesign{
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.9), rgba(0, 0, 0, 0.9)), url(images/images.png); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

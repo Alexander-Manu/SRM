@@ -104,7 +104,7 @@
 </nav>
   
                     <!-- STUDENT ADMISSION FORM -->
-        <div class="container">
+        <div class="container formdesign">
             <form method="post">
                 <p class="text-center shadow rounded heading">Student Admission Forms</p>
                 <div id="student" class="information">

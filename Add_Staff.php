@@ -105,7 +105,7 @@
   
 
                   <!-- STAFF FORMS -->
-<div class="container">
+<div class="container formdesign">
         <form method="post">
             <p class="text-center shadow rounded heading">Staff Admission Forms</p>
             <div id="student" class="information">
@@ -289,7 +289,7 @@
     
             <div style="margin: 20px;">
                 <fieldset class="form-group">
-                    <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="submitstaffinfo" value="ADD STAFF">
+                    <input style="margin-left: 45%" class="btn btn-primary shadow" type="submit" name="submit" value="ADD STAFF">
                 </fieldset>
             </div>
         </form>
@@ -330,3 +330,16 @@
   
   </body>
 </html>
+
+<?php
+  //Process the data from Form and Save to Database
+  //Check whether the Add Staff button is clicked or not
+  
+  if(isset($_POST['submit'])){
+    // Button Clicked
+    echo "Button Clicked";
+  }else{
+    // Button not clicked
+    echo "Button not Clicked";
+  }
+?>

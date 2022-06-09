@@ -403,6 +403,28 @@
   margin-top: 1px;
 }
 
+.quickLinks{
+  position: relative;
+  top: 90%;
+  left: 50%;
+  transform: translate(-20%, -5%);
+}
+
+.vw{
+  position: relative;
+  top: 2%;
+  right: 15%;
+  transform: translate(-10%, -10%);
+}
+
+.u{
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.9), rgba(0, 0, 0, 0.9)), url(images/images.png); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
     min-height: 817px;
