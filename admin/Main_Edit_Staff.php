@@ -6,7 +6,7 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Staff Info-Reporting Sys.</title>
+    <title>Edit Staff-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Add_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
@@ -25,7 +25,7 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Add Staff">
+    <meta property="og:title" content="Edit Staff">
     <meta property="og:type" content="website">
   </head>
   <body>
@@ -88,8 +88,8 @@
             Others
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
-            <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
+            <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+            <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
             <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -97,19 +97,23 @@
             <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
           </ul>
         </li>
-        <button class="btn btn-outline-primary" type="submit">Logout</button>
+        <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+            Logout
+        </a>
       </ul>  
     </div>
   </div>
 </nav>
   
 
-                  <!--                       STAFF INFORMATION 
-                THIS PAGE WILL AUTOMATICALLY LOAD WHEN THE USER CLICK ON A STAFF FROM THE ALL_STAFF.PHP PAGE -->
+ <!-- THIS FORM WILL BE AUTO FILLED FROM THE STAFF DATABASE BASE ON THE ID THE USER WILL CLICK FROM EDIT STAFF PAGE
+            NB: THERE SHOULD BE A VALUE ATTRIBUTE IN THE INPUT TAG WHICH WILL CONTAIN THE PHP CODES THAT WILL AUTO GENERATE THE DATA-->
 
-<div class="container">
+
+                  <!-- STAFF FORMS -->
+                  <div class="container">
         <form method="post">
-            <p class="text-center shadow rounded heading">Staff Admission Forms</p>
+            <p class="text-center shadow rounded heading">Staff Information</p>
             <div id="student" class="information">
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -118,24 +122,24 @@
                     </div>
                     <div class="form-group col-md-6 display">
                         <img src="" alt="" style="width: 150px; height: 120px;">
-                        <a href="#" class="btn btn-primary shadow mx-3 mb-2" role="button">Upload Image</a>
+                        <a href="#" class="btn btn-outline-primary shadow mx-3 mb-2" role="button">Upload Image</a>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputFirstName">FIRST NAME:</label>
-                        <input type="text" name="First_Name" required="" class="form-control shadow" id="First_Name" placeholder="Enter First Name..." readonly>
+                        <input type="text" name="First_Name" required="" class="form-control shadow" id="First_Name" placeholder="Enter First Name...">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputLastName">LAST NAME:</label>
-                        <input type="text" name="Last_Name" required="" class="form-control shadow" id="Last_Name" placeholder="Enter Last Name..." readonly>
+                        <input type="text" name="Last_Name" required="" class="form-control shadow" id="Last_Name" placeholder="Enter Last Name...">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputGender">GENDER:</label>
-                        <select name="Gender" id="Gender" require="" class="form-control shadow" readonly>
+                        <select name="Gender" id="Gender" require="" class="form-control shadow">
                             <option selected>Select Gender... </option>
                             <option>Male</option>
                             <option>Female</option>
@@ -143,14 +147,14 @@
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputD_O_B">DATE OF BIRTH:</label>
-                        <input type="date" name="D_O_B" required="" class="form-control shadow" id="D_O_B" placeholder="DD-MM-YYYY" readonly>
+                        <input type="date" name="D_O_B" required="" class="form-control shadow" id="D_O_B" placeholder="DD-MM-YYYY">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputReligion">RELIGION:</label>
-                        <select name="Religion" id="Religion" require="" class="form-control shadow" readonly>
+                        <select name="Religion" id="Religion" require="" class="form-control shadow">
                             <option selected>Choose Religion...</option>
                             <option>Christianity</option>
                             <option>Islam</option>
@@ -160,40 +164,40 @@
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputNational_ID">NATIONAL ID:</label>
-                        <input type="text" name="National_ID" required="" class="form-control shadow" id="National_ID" placeholder="000-0000-00" readonly>
+                        <input type="text" name="National_ID" required="" class="form-control shadow" id="National_ID" placeholder="000-0000-00">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputCountry">NATIONALITY / COUNTRY:</label>
-                        <input type="text" name="Country" required="" class="form-control shadow" id="Country" placeholder="Enter Country Of Origin..." readonly>
+                        <input type="text" name="Country" required="" class="form-control shadow" id="Country" placeholder="Enter Country Of Origin...">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputCity">CITY:</label>
-                        <input type="text" name="City" required="" class="form-control shadow" id="City" placeholder="Enter City..." readonly>
+                        <input type="text" name="City" required="" class="form-control shadow" id="City" placeholder="Enter City...">
                     </div>
                 </div>
 
                 <div class="form-row">                   
                     <div class="form-group col-md-6 display">
                         <label for="inputAddress">ADDRESS:</label>
-                        <input type="text" name="Address" required="" class="form-control shadow" id="Address" placeholder="House No, GPS Address...." readonly>
+                        <input type="text" name="Address" required="" class="form-control shadow" id="Address" placeholder="House No, GPS Address....">
                     </div>                   
                     <div class="form-group col-md-6 display">
                         <label for="inputAddress"> E-MAIL ADDRESS:</label>
-                        <input type="email" name="Email_Address" required="" class="form-control shadow" id="Email_Address" placeholder="example@info.com" readonly>
+                        <input type="email" name="Email_Address" required="" class="form-control shadow" id="Email_Address" placeholder="example@info.com">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputAdmissionDate">ADMISSION DATE:</label>
-                        <input type="date" name="Admission_Date" required="" class="form-control shadow" id="Admission_Date" placeholder="DD-MM-YYYY" readonly>
+                        <input type="date" name="Admission_Date" required="" class="form-control shadow" id="Admission_Date" placeholder="DD-MM-YYYY">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputClassAssign">ASSIGN CLASS:</label>
-                        <select name="Assign_Class" id="Assign_Class" require="" class="form-control shadow" readonly>
+                        <select name="Assign_Class" id="Assign_Class" require="" class="form-control shadow">
                             <option selected>  </option>
                             <option>Primary 1</option>
                             <option>Primary 2</option>
@@ -211,51 +215,51 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputFathersName">FATHER'S NAME:</label>
-                        <input type="text" name="Fathers_Name" required="" class="form-control shadow" id="Fathers_Name" placeholder="Enter Father's Name..." readonly>
+                        <input type="text" name="Fathers_Name" required="" class="form-control shadow" id="Fathers_Name" placeholder="Enter Father's Name...">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputFathersContact">FATHER'S CONTACT:</label>
-                        <input type="number" name="Fathers_Contact" required="" class="form-control shadow" id="Fathers_Contact" placeholder="Enter Father's contact..." readonly>
+                        <input type="number" name="Fathers_Contact" required="" class="form-control shadow" id="Fathers_Contact" placeholder="Enter Father's contact...">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputFathersOccupation">FATHER'S OCCUPATION:</label>
-                        <input type="text" name="Fathers_Occupation" required="" class="form-control shadow" id="Fathers_Occupation" placeholder="Banker, Trader...." readonly>
+                        <input type="text" name="Fathers_Occupation" required="" class="form-control shadow" id="Fathers_Occupation" placeholder="Banker, Trader....">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputFathersNID">FATHER'S NATIONAL ID:</label>
-                        <input type="text" name="Fathers_NID" required="" class="form-control shadow" id="Fathers_NID" placeholder="000-0000-000" readonly>
+                        <input type="text" name="Fathers_NID" required="" class="form-control shadow" id="Fathers_NID" placeholder="000-0000-000">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputMothersName">MOTHER'S NAME:</label>
-                        <input type="text" name="Mothers_Name" required="" class="form-control shadow" id="Mothers_name" placeholder="Enter Mother's Name...." readonly>
+                        <input type="text" name="Mothers_Name" required="" class="form-control shadow" id="Mothers_name" placeholder="Enter Mother's Name....">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputMothersContact">MOTHER'S CONTACT:</label>
-                        <input type="number" name="Mothers_Contact" required="" class="form-control shadow" id="Mothers_Contact" placeholder="024********" readonly>
+                        <input type="number" name="Mothers_Contact" required="" class="form-control shadow" id="Mothers_Contact" placeholder="024********">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputMothersOccupation">MOTHER'S OCCUPATION:</label>
-                        <input type="text" name="Mothers_Occupation" required="" class="form-control shadow" id="Mothers_Occupation" placeholder="Example, Banker, Teacher...." readonly>
+                        <input type="text" name="Mothers_Occupation" required="" class="form-control shadow" id="Mothers_Occupation" placeholder="Example, Banker, Teacher....">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputMothersNID">MOTHER'S NATIONAL ID:</label>
-                        <input type="text" name="Mothers_NID" required="" class="form-control shadow" id="Mothers_NID" placeholder="000-0000-000" readonly>
+                        <input type="text" name="Mothers_NID" required="" class="form-control shadow" id="Mothers_NID" placeholder="000-0000-000">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4 display">
                         <label for="inputMaritalStatus">MARITAL STATUS:</label>
-                        <select name="Marital_Status" id="Marital_Status" require="" class="form-control shadow" readonly>
+                        <select name="Marital_Status" id="Marital_Status" require="" class="form-control shadow">
                             <option selected>  </option>
                             <option>Single</option>
                             <option>Married</option>
@@ -268,22 +272,22 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputSpouseName">SPOUSE NAME:</label>
-                        <input type="text" name="Spouse_Name" class="form-control shadow" id="Spouse_name" placeholder="Enter Spouse Name...." readonly>
+                        <input type="text" name="Spouse_Name" class="form-control shadow" id="Spouse_name" placeholder="Enter Spouse Name....">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputSpouseContact">SPOUSE CONTACT:</label>
-                        <input type="number" name="Spouse_Contact" class="form-control shadow" id="Spouse_Contact" placeholder="024********" readonly >
+                        <input type="number" name="Spouse_Contact" class="form-control shadow" id="Spouse_Contact" placeholder="024********">
                     </div>
                 </div>
     
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputSpouseOccupation">SPOUSE OCCUPATION:</label>
-                        <input type="text" name="Spouse_Occupation" class="form-control shadow" id="Spouse_Occupation" placeholder="Example Banker, Teacher...." readonly>
+                        <input type="text" name="Spouse_Occupation" class="form-control shadow" id="Spouse_Occupation" placeholder="Example Banker, Teacher....">
                     </div>
                     <div class="form-group col-md-6 display">
                         <label for="inputSpouseNID">SPOUSE NATIONAL ID:</label>
-                        <input type="text" name="Spouse_NID" class="form-control shadow" id="Spouse_NID" placeholder="000-0000-000" readonly>
+                        <input type="text" name="Spouse_NID" class="form-control shadow" id="Spouse_NID" placeholder="000-0000-000">
                     </div>
                 </div>
     
@@ -291,7 +295,7 @@
     
             <div style="margin: 20px;">
                 <fieldset class="form-group">
-                    <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="backToStaff" value="&LeftArrow; BACK">
+                    <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="Updatestaffinfo" value="UPDATE STAFF">
                 </fieldset>
             </div>
         </form>
@@ -299,5 +303,5 @@
 
 
 
-          <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+                <!-- FOOTER -->
+<?php include('partials/footer.php'); ?>

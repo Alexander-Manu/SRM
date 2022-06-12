@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="footer.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
     
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -49,6 +50,30 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Staffs
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="Add_Staff.php">Add Staff</a></li>
+              <li><a class="dropdown-item" href="Edit_Staff.php">Edit Staff</a></li>
+              <li><a class="dropdown-item" href="Remove_Staff.php">Remove Staff</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="All_Staff.php">All Staff</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Students
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="Add_Student.php">Add Student</a></li>
+              <li><a class="dropdown-item" href="Edit_Student.php">Edit Student</a></li>
+              <li><a class="dropdown-item" href="Remove_Student.php">Remove Student</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="All_Student.php">All Student</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Manage Results
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -64,7 +89,8 @@
               Others
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="manage-teacher.php">Change Password</a></li>
+              <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+              <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
               <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -79,7 +105,7 @@
       </div>
     </div>
   </nav>
-
+          <br><br>
                 <?php
                     if(isset($_SESSION['login']))
                     {
@@ -87,6 +113,7 @@
                         unset($_SESSION['login']);
                     }
                 ?>
+                <br><br>
 
   <div class="container">
     <div class="row" style="padding-top: 30px;">
@@ -109,7 +136,35 @@
     </div>
   </div>
 
-    </div>    
+    <div class="quickLinks container">
+        <h1>Quick Links:</h1>
+        <h2>Staffs:</h2>
+        <a href="Add_Staff.php" class="btn btn-outline-success shadow btn-lg mx-2 mb-2 vw" role="button">Add Staff</a>
+        <a href="Edit_Staff.php" class="btn btn-outline-warning shadow btn-lg mx-2 mb-2 vw" role="button">Edit Staff</a>
+        <a href="Remove_Staff.php" class="btn btn-outline-danger shadow btn-lg mx-2 mb-2 vw" role="button">Remove Staff</a>
+        <a href="All_Student.php" class="btn btn-outline-primary shadow btn-lg mx-2 mb-2 vw" role="button">All Staff</a>
+
+        <h2>Students:</h2>
+        <a href="Add_Student.php" class="btn btn-outline-success shadow btn-lg mx-2 mb-2 vw" role="button">Add Student</a>
+        <a href="Edit_Student.php" class="btn btn-outline-warning shadow btn-lg mx-2 mb-2 vw" role="button">Edit Student</a>
+        <a href="Remove_Student.php" class="btn btn-outline-danger shadow btn-lg mx-2 mb-2 vw" role="button">Remove Student</a>
+        <a href="All_Student.php" class="btn btn-outline-primary shadow btn-lg mx-2 mb-2 vw" role="button">All Student</a>
+
+        <h2>Results:</h2>
+        <a href="Add_Results.php" class="btn btn-outline-success shadow btn-lg mx-2 mb-2 vw" role="button">Add Results</a>
+        <a href="Edit_Results.php" class="btn btn-outline-warning shadow btn-lg mx-2 mb-2 vw" role="button">Edit Results</a>
+        <a href="Remove_Results.php" class="btn btn-outline-danger shadow btn-lg mx-2 mb-2 vw" role="button">Remove Results</a>
+        <a href="All_Results.php" class="btn btn-outline-primary shadow btn-lg mx-2 mb-2 vw" role="button">All Results</a>
+
+        <h2>Others:</h2>
+        <a href="Add_Class.php" class="btn btn-outline-success shadow btn-lg mx-3 mb-2 vw" role="button">Add Class</a>
+        <a href="Edit_Class.php" class="btn btn-outline-warning shadow btn-lg mx-3 mb-2 vw" role="button">Edit Class</a>
+        <a href="Remove_Class.php" class="btn btn-outline-danger shadow btn-lg mx-3 mb-2 vw" role="button">Remove Class</a> <br>
+        <a href="Add_Subject.php" class="btn btn-outline-success shadow btn-lg mx-3 mb-2 vw" role="button">Add Subject</a>
+        <a href="Edit_Subject.php" class="btn btn-outline-warning shadow btn-lg mx-3 mb-2 vw" role="button">Edit Subject</a>
+        <a href="Remove_Subject.php" class="btn btn-outline-danger shadow btn-lg mx-3 mb-2 vw" role="button">Remove Subject</a>
+    </div>
+</div>    
 
   <!------Footer------>
   <?php include('partials/footer.php'); ?>

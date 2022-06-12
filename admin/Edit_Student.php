@@ -48,7 +48,7 @@
           <a class="nav-link" aria-current="page" href="Dashboard.php">Dashboard</a>
         </li>
         <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Staffs
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -60,7 +60,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Students
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -88,8 +88,8 @@
             Others
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
-            <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
+            <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+            <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
             <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -97,7 +97,9 @@
             <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
           </ul>
         </li>
-        <button class="btn btn-outline-primary" type="submit">Logout</button>
+        <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+          Logout
+        </a>
       </ul>  
     </div>
   </div>
@@ -153,4 +155,35 @@
 
 
                 <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+                <nav class="navbar mt-4 mb-n4 pt-2" style="background-color: #e3f2fd;">
+  <div class="container justify-content-center fw-bolder fs-5">
+    <a class="navbar-brand" href="#"><h6>&copy; All Rights Reserved, 2022 - School Reporting System ~ (v1.0)</h6></a>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-sm pt-0" style="background-color: #e3f2fd;">
+<div class="container-fluid justify-content-center fst-italic fs-5 mt-n3">
+   
+  <ul class="navbar-nav ">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Design By  &RightArrow; </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-globe"></i> SupaTech Developers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@supatech.com</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-phone" aria-hidden="true"></i> 02345678000</a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

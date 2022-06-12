@@ -1,3 +1,8 @@
+<?php
+    include('../config/constants.php');
+    include('login-check.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +21,7 @@
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
+    <link rel="stylesheet" href="css/style.css">
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -47,6 +52,35 @@
           <li class="nav-item fst-italic">
             <a class="nav-link active" aria-current="page" href="Dashboard.php">Dashboard</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" id="navbarDropdown" href="manage-admin.php">
+              Manage Admins
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Staffs
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="Add_Staff.php">Add Staff</a></li>
+              <li><a class="dropdown-item" href="Edit_Staff.php">Edit Staff</a></li>
+              <li><a class="dropdown-item" href="Remove_Staff.php">Remove Staff</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="All_Staff.php">All Staff</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Students
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="Add_Student.php">Add Student</a></li>
+              <li><a class="dropdown-item" href="Edit_Student.php">Edit Student</a></li>
+              <li><a class="dropdown-item" href="Remove_Student.php">Remove Student</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="All_Student.php">All Student</a></li>
+            </ul>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Manage Results
@@ -64,7 +98,8 @@
               Others
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="manage-teacher.php">Change Password</a></li>
+              <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
+              <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
               <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -79,37 +114,4 @@
       </div>
     </div>
   </nav>
-
-                <?php
-                    if(isset($_SESSION['login']))
-                    {
-                        echo $_SESSION['login'];
-                        unset($_SESSION['login']);
-                    }
-                ?>
-
-  <div class="container">
-    <div class="row" style="padding-top: 30px;">
-      <div class="col-sm-6" style="padding-bottom: 20px;">
-        <div class="card text-center shadow rounded border-primary">
-          <div class="card-body">
-            <h5 class="card-title" style="font-size: 30px; color: black"><i class="fa fa-users"></i> TOTAL STAFF</h5>
-            <p class="card-text" style="font-size: 50px; color: black">0</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6" style="padding-bottom: 20px;">
-        <div class="card text-center shadow rounded border-primary">
-          <div class="card-body">
-            <h5 class="card-title" style="font-size: 30px; color: black"><i class="fa fa-graduation-cap" aria-hidden="true"></i>TOTAL STUDENT</h5>
-            <p class="card-text" style="font-size: 50px; color: black">0</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    </div>    
-
-  <!------Footer------>
-  <?php include('partials/footer.php'); ?>
+        <!-----Menu Section Ends----->

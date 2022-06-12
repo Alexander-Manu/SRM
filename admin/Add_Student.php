@@ -61,7 +61,7 @@
         </li>
         <li class="nav-item dropdown  fst-italic">
           <a class="nav-link dropdown-toggle  active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Manage Studentsss
+            Manage Students
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="Add_Student.php">Add Student</a></li>
@@ -88,8 +88,8 @@
             Others
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
-            <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
+            <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+            <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
             <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -97,7 +97,9 @@
             <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
           </ul>
         </li>
-        <button class="btn btn-outline-primary" type="submit">Logout</button>
+        <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+          Logout
+        </a>
       </ul>  
     </div>
   </div>
@@ -309,4 +311,4 @@
           </div>
     
            <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

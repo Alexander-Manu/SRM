@@ -6,7 +6,7 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Edit Student-Reporting Sys.</title>
+    <title>Edit Staff-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Edit_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
@@ -25,7 +25,7 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Edit Student">
+    <meta property="og:title" content="Edit Staff">
     <meta property="og:type" content="website">
   </head>
   <body>
@@ -88,8 +88,8 @@
             Others
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
-            <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
+            <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+            <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
             <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -97,7 +97,9 @@
             <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
           </ul>
         </li>
-        <button class="btn btn-outline-primary" type="submit">Logout</button>
+        <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+          Logout
+        </a>
       </ul>  
     </div>
   </div>
@@ -106,16 +108,16 @@
 
 <div class="container">
                     <form method="post">
-                        <p class="text-center shadow rounded heading">Student Update Information</p>
+                        <p class="text-center shadow rounded heading">Staff Update Information</p>
                         <div id="student" class="information">
                             <div class="form-row">
                                 <div class="form-group col-md-6 display">
-                                    <label for="searchStudent">SEARCH STUDENT:</label>
-                                    <input type="text" name="Search_Student" required="" class="form-control shadow " id="Search_Student" placeholder="Enter id, name...">
+                                    <label for="searchStaff">SEARCH STAFF:</label>
+                                    <input type="text" name="Search_Staff" required="" class="form-control shadow " id="Search_Staff" placeholder="Enter id, name...">
                                 </div>
                                 <div class="form-group col-md-6 display">
                                     
-                                    <input id="btnSubmit" type="submit" name="searchStudentInfo" class="btn btn-outline-primary" value="SEARCH">
+                                    <input id="btnSubmit" type="submit" name="searchStaffInfo" class="btn btn-outline-primary" value="SEARCH">
                                 </div>
                             </div>
                         </div>
@@ -124,7 +126,7 @@
 
 
                 <div id="table">
-                    <span id="allStaff">ALL STUDENT:</span>
+                    <span id="allStaff">ALL STAFF:</span>
                     <table class="table table-striped table-primary">
                         <tr>
                             <th scope="col">ID:</th>
@@ -132,18 +134,18 @@
                             <th scope="col">LAST NAME:</th>
                             <th scope="col">GENDER:</th>
                             <th scope="col">D.O.B.:</th>
-                            <th scope="col">COUNTRY:</th>
+                            <th scope="col">PHONE No:</th>
                             <th scope="col">ADDRESS:</th>
-                            <th scope="col">DATE ADMITTED:</th>
-                            <th scope="col">CLASS:</th>
-                            <th scope="col">POSITION:</th>
-                            <th scope="col">FATHERS NAME:</th>
-                            <th scope="col">MOTHERS NAME:</th>
+                            <th scope="col">EMPLOYED DATE:</th>
+                            <th scope="col">CLASS ASSIGNED:</th>
+                            <th scope="col">RELIGION:</th>
+                            <th scope="col">NATIONALITY:</th>
+                            <th scope="col">NATIONAL ID:</th>
                             <th scope="col">ACTION:</th>
                         </tr>
              <!-- PHP code to pull data from the database base on the table columns above follows here -->
-            <!-- NB: WHEN YOU CLICK ON UPDATE BUTTON, IT WILL DIRECT YOU TO THE MAIN_EDIT_STUDENT.PHP PAGE WHERE YOU CAN ACTUALLY 
-                UPDATE THE STUDENT INFO BASE ON THE COREESPONDING ID YOU CLICK -->
+            <!-- NB: WHEN YOU CLICK ON UPDATE BUTTON, IT WILL DIRECT YOU TO THE EDIT_STAFF_2.HTML PAGE WHERE YOU CAN ACTUALLY 
+                UPDATE THE STAFF INFO BASE ON THE COREESPONDING ID YOU CLICK -->
                     </table>
                 </div>
 
@@ -153,4 +155,35 @@
 
 
                 <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+                <nav class="navbar mt-4 mb-n4 pt-2" style="background-color: #e3f2fd;">
+  <div class="container justify-content-center fw-bolder fs-5">
+    <a class="navbar-brand" href="#"><h6>&copy; All Rights Reserved, 2022 - School Reporting System ~ (v1.0)</h6></a>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-sm pt-0" style="background-color: #e3f2fd;">
+<div class="container-fluid justify-content-center fst-italic fs-5 mt-n3">
+   
+  <ul class="navbar-nav ">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Design By  &RightArrow; </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-globe"></i> SupaTech Developers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@supatech.com</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-phone" aria-hidden="true"></i> 02345678000</a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

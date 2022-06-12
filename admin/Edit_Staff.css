@@ -1,5 +1,5 @@
 body{
-    margin-bottom: 60px;
+    margin:0px 60px 0px 0px;
 }
 
 #alert{
@@ -30,10 +30,21 @@ label{
     font-weight: bold;
 }
 
-.formdesign{
-    color: white;
-    background: linear-gradient(rgba(0,0,0,0.9), rgba(0, 0, 0, 0.9)), url(images/images.png); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#btnSubmit{
+    margin-top: 24px;
 }
+
+ #table{
+    /* border: 2px solid red;
+    width: 1312px;   */
+    margin: 10px 0px;
+    padding: 10px 10px 0px 10px;
+}
+
+#allStaff{
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+     

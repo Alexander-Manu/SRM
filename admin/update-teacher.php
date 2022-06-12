@@ -1,3 +1,7 @@
+<?php
+    include('../config/constants.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,12 +10,13 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Edit Student-Reporting Sys.</title>
+    <title>All Staff-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Edit_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
     
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -25,7 +30,7 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Edit Student">
+    <meta property="og:title" content="Edit Staff">
     <meta property="og:type" content="website">
   </head>
   <body>
@@ -48,7 +53,7 @@
           <a class="nav-link" aria-current="page" href="Dashboard.php">Dashboard</a>
         </li>
         <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Staffs
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -84,12 +89,12 @@
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Others
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
-            <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
+            <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+            <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
             <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -97,60 +102,123 @@
             <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
           </ul>
         </li>
-        <button class="btn btn-outline-primary" type="submit">Logout</button>
+        <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+            Logout
+        </a>
       </ul>  
     </div>
   </div>
 </nav>
-  
 
-<div class="container">
-                    <form method="post">
-                        <p class="text-center shadow rounded heading">Student Update Information</p>
-                        <div id="student" class="information">
-                            <div class="form-row">
-                                <div class="form-group col-md-6 display">
-                                    <label for="searchStudent">SEARCH STUDENT:</label>
-                                    <input type="text" name="Search_Student" required="" class="form-control shadow " id="Search_Student" placeholder="Enter id, name...">
-                                </div>
-                                <div class="form-group col-md-6 display">
-                                    
-                                    <input id="btnSubmit" type="submit" name="searchStudentInfo" class="btn btn-outline-primary" value="SEARCH">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<div class="main-content">
+    <div class="wrapper">
+        <h1>Update Teacher Information</h1>
+        <br /><br />
 
+        <?php 
+            //1. Get ID of Selected ID
+            $id=$_GET['id'];
 
-                <div id="table">
-                    <span id="allStaff">ALL STUDENT:</span>
-                    <table class="table table-striped table-primary">
-                        <tr>
-                            <th scope="col">ID:</th>
-                            <th scope="col">FIRST NAME:</th>
-                            <th scope="col">LAST NAME:</th>
-                            <th scope="col">GENDER:</th>
-                            <th scope="col">D.O.B.:</th>
-                            <th scope="col">COUNTRY:</th>
-                            <th scope="col">ADDRESS:</th>
-                            <th scope="col">DATE ADMITTED:</th>
-                            <th scope="col">CLASS:</th>
-                            <th scope="col">POSITION:</th>
-                            <th scope="col">FATHERS NAME:</th>
-                            <th scope="col">MOTHERS NAME:</th>
-                            <th scope="col">ACTION:</th>
-                        </tr>
-             <!-- PHP code to pull data from the database base on the table columns above follows here -->
-            <!-- NB: WHEN YOU CLICK ON UPDATE BUTTON, IT WILL DIRECT YOU TO THE MAIN_EDIT_STUDENT.PHP PAGE WHERE YOU CAN ACTUALLY 
-                UPDATE THE STUDENT INFO BASE ON THE COREESPONDING ID YOU CLICK -->
-                    </table>
-                </div>
+            //2. Create SQL Query to Get the Details
+            $sql="SELECT * FROM tbl_teacher WHERE id=$id";
+
+            //Execute the Query
+            $res=mysqli_query($con, $sql);
+
+            //Check whether the Query is executed or not
+            if($res == TRUE)
+            {
+                //Check whether the data is available or not
+                $count = mysqli_num_rows($res);
+                //Check whether we have teacher data or not
+                if($count==1)
+                {
+                    // Get the Details
+                    //echo "Teacher Available";
+                    $row=mysqli_fetch_assoc($res);
+
+                    $full_name = $row['full_name'];
+                    $class_assigned = $row['class_assigned'];
+                    $username = $row['username'];
+                }
+                else
+                {
+                    //Redirect to manage Teacher Page
+                    header('location:'.SITEURL.'admin/manage-teacher.php');
+
+                }
+            }
+        ?>
 
 
+        <form action="" method="POST">
+            <table class="tbl-30">
+                <tr>
+                    <td>Full Name</td>
+                    <td>
+                        <input type="text" name="full_name" value="<?php echo $full_name;  ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Class Assigned</td>
+                    <td>
+                        <input type="text" name="class_assigned" value="<?php echo $class_assigned;  ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" name="username" value="<?php echo $username; ?>">
+                    </td>
+                </tr>
 
+                <tr>
+                    <td colspan="2">
+                        <input type="hidden" name="id" value="<?php echo $id;  ?>">
+                        <input type="submit" name="submit" value="Update Teacher" class="btn-secondary">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<?php
+    //Check whether the submit button is clicked or not
+    if(isset($_POST['submit']))
+    {
+        //echo "button clicked";
+        //Get all the values from form
+        echo $id = $_POST['id'];
+        echo $full_name = mysqli_real_escape_string($con, $_POST['full_name']);
+        echo $class_assigned = mysqli_real_escape_string($con, $_POST['class_assigned']);
+        echo $username = mysqli_real_escape_string($con, $_POST['username']);
 
+        //Create an SQL Query to update Teacher
+        $sql = "UPDATE tbl_teacher SET
+        full_name = '$full_name',
+        class_assigned = '$class_assigned',
+        username = '$username'
+        WHERE id = '$id' ";
 
+        //Execute the Query
+        $res = mysqli_query($con, $sql);
 
-                <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+        //Check whether the query is executed successfully
+        if($res == TRUE)
+        {
+            //Query Executed and Teacher updated
+            $_SESSION['update'] = "<div class='success tex-center'>Teacher Updated Successfully.</div>";
+            //Redirect to Manage Teacher Page
+            echo "<script>window.location.href='manage-teacher.php';</script>";
+        }
+        else
+        {
+            //Failed to updated Teacher
+            $_SESSION['update'] = "<div class='error tex-center'>Failed to Updated Teacher.</div>";
+            //Redirect to Manage Teacher Page
+            echo "<script>window.location.href='manage-teacher.php';</script>";
+        }
+    }
+?>
+
+<?php include('partials/footer.php'); ?>

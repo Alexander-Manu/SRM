@@ -6,7 +6,7 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Edit Student-Reporting Sys.</title>
+    <title>All Staff-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Edit_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
@@ -25,7 +25,7 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Edit Student">
+    <meta property="og:title" content="Edit Staff">
     <meta property="og:type" content="website">
   </head>
   <body>
@@ -88,8 +88,8 @@
             Others
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="Add_Class.php">Add Class</a></li>
-            <li><a class="dropdown-item" href="Edit_Class.php">Edit Class</a></li>
+            <li><a class="dropdown-item" href="manage-admin.php">Manage Admins</a></li>
+            <li><a class="dropdown-item" href="manage-teacher.php">Manage Teacher</a></li>
             <li><a class="dropdown-item" href="Remove_Class.php">Remove Class</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Add_Subject.php">Add Subject</a></li>
@@ -97,25 +97,26 @@
             <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
           </ul>
         </li>
-        <button class="btn btn-outline-primary" type="submit">Logout</button>
+        <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+          Logout
+        </a>
       </ul>  
     </div>
   </div>
 </nav>
-  
 
 <div class="container">
                     <form method="post">
-                        <p class="text-center shadow rounded heading">Student Update Information</p>
+                        <p class="text-center shadow rounded heading">All Staff Information</p>
                         <div id="student" class="information">
                             <div class="form-row">
                                 <div class="form-group col-md-6 display">
-                                    <label for="searchStudent">SEARCH STUDENT:</label>
-                                    <input type="text" name="Search_Student" required="" class="form-control shadow " id="Search_Student" placeholder="Enter id, name...">
+                                    <label for="searchStaff">SEARCH STAFF:</label>
+                                    <input type="text" name="Search_Staff" required="" class="form-control shadow " id="Search_Staff" placeholder="Enter id, name...">
                                 </div>
                                 <div class="form-group col-md-6 display">
                                     
-                                    <input id="btnSubmit" type="submit" name="searchStudentInfo" class="btn btn-outline-primary" value="SEARCH">
+                                    <input id="btnSubmit" type="submit" name="searchStaffInfo" class="btn btn-outline-primary" value="SEARCH">
                                 </div>
                             </div>
                         </div>
@@ -124,7 +125,7 @@
 
 
                 <div id="table">
-                    <span id="allStaff">ALL STUDENT:</span>
+                    <span id="allStaff">ALL STAFF:</span>
                     <table class="table table-striped table-primary">
                         <tr>
                             <th scope="col">ID:</th>
@@ -132,18 +133,18 @@
                             <th scope="col">LAST NAME:</th>
                             <th scope="col">GENDER:</th>
                             <th scope="col">D.O.B.:</th>
-                            <th scope="col">COUNTRY:</th>
+                            <th scope="col">PHONE No:</th>
                             <th scope="col">ADDRESS:</th>
-                            <th scope="col">DATE ADMITTED:</th>
-                            <th scope="col">CLASS:</th>
-                            <th scope="col">POSITION:</th>
-                            <th scope="col">FATHERS NAME:</th>
-                            <th scope="col">MOTHERS NAME:</th>
+                            <th scope="col">EMPLOYED DATE:</th>
+                            <th scope="col">CLASS ASSIGNED:</th>
+                            <th scope="col">RELIGION:</th>
+                            <th scope="col">NATIONALITY:</th>
+                            <th scope="col">NATIONAL ID:</th>
                             <th scope="col">ACTION:</th>
                         </tr>
-             <!-- PHP code to pull data from the database base on the table columns above follows here -->
-            <!-- NB: WHEN YOU CLICK ON UPDATE BUTTON, IT WILL DIRECT YOU TO THE MAIN_EDIT_STUDENT.PHP PAGE WHERE YOU CAN ACTUALLY 
-                UPDATE THE STUDENT INFO BASE ON THE COREESPONDING ID YOU CLICK -->
+               <!-- PHP code to pull data from the database base on the table columns above follows here -->
+            <!-- NB: WHEN YOU CLICK ON ANY STAFF FROM THE TABLE, IT WILL DIRECT YOU TO THAT STAFF INFO 
+                    BASE ON THAT STAFF ID -->
                     </table>
                 </div>
 
@@ -153,4 +154,4 @@
 
 
                 <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+<?php include('partials/footer.php'); ?>
