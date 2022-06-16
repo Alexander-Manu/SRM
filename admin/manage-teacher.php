@@ -230,5 +230,5 @@
             </div>
         </div>
         <!-----Main Content Section Ends----->
-
-<?php include('partials/footer.php'); ?>
+          <!------Footer------>
+<?php include('../partials/footer.php'); ?>

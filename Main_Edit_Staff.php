@@ -302,4 +302,4 @@
 
 
               <!-- FOOTER -->
-<?php include('admin/partials/footer.php'); ?>
+<?php include('partials/footer.php'); ?>

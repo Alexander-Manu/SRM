@@ -72,7 +72,7 @@ label{
 
 .formdesign{
   color: white;
-  background: linear-gradient(rgba(0,0,0,0.9), rgba(0, 0, 0, 0.9)), url(images/images.png); 
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.2)), url(images/images.png); 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

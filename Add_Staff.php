@@ -190,6 +190,10 @@
                         <input type="date" name="Admission_Date" required="" class="form-control shadow" id="Admission_Date" placeholder="DD-MM-YYYY">
                     </div>
                     <div class="form-group col-md-6 display">
+                        <label for="inputQualification">Qualification:</label>
+                        <input type="date" name="Qualification" required="" class="form-control shadow" id="Qualification" placeholder="Enter Staff Qualificaiton">
+                    </div>
+                    <div class="form-group col-md-6 display">
                         <label for="inputClassAssign">ASSIGN CLASS:</label>
                         <select name="Assign_Class" id="Assign_Class" require="" class="form-control shadow">
                             <option selected>  </option>

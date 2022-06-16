@@ -1,4 +1,8 @@
-<?php include('config/constants.php'); ?>
+<?php 
+
+  include('config/constants.php'); 
+
+?>
 
 <html class="lead">
     <head>
@@ -28,7 +32,7 @@
 
             <!------Login Form Starts------>
             <form action="" method="POST" class="text-center">
-                Username: <br />
+                Username <br />
                 example@supatech.org<br /><br />
                 <input type="text" name="username" placeholder="Enter Username"><br /><br />
 
@@ -37,11 +41,13 @@
                 
                 <input type="submit" name="submitT" value="Login as Teacher" class="btn-primary">
                 <br><br>
+                <input type="submit" name="submitA" value="Login as Admin" class="btn-primary">
+                <br><br>
 
             </form>
             <!------Login Form Starts------>
 
-            <p class="text-center">Created By - <a href="https://objective-brown-fa0d45.netlify.app/">Savi</a></p>
+            <p class="text-center">Created By - <a href="https://objective-brown-fa0d45.netlify.app/">Supatech</a></p>
         </div>
 
     </body>
@@ -49,7 +55,7 @@
 
 <?php
 
-    //Check whether the submit button is clicked or not
+    //Check whether the submit teacher button is clicked or not
     if(isset($_POST['submitT']))
     {
         //Process for Login
@@ -75,6 +81,42 @@
             $_SESSION['user'] = $username; //To check whether the user is logged in or not and logout will unset it
             //Redirect to Home Page/Dashboard
             header('location:'.SITEURL);
+        }
+        else
+        {
+            //User not available
+            $_SESSION['login'] = "<div = class='error text-center'>Username or Password did not match</div>";
+            //Redirect to Home Page/Dashboard
+            header('location:'.SITEURL.'login.php');
+        }
+    }
+
+    //Check whether the submit admin button is clicked or not
+    if(isset($_POST['submitA']))
+    {
+        //Process for Login
+        //1. Get the Data from Login form
+        //$username = $_POST['username'];
+        //$password = md5($_POST['password']);
+        $username = mysqli_real_escape_string($con, $_POST['username']);
+        $password = mysqli_real_escape_string($con, md5($_POST['password']));
+
+        //2. SQL to check whether the username and password exists or not
+        $sql = "SELECT * FROM tbl_admin WHERE username = '$username' AND password = '$password'";
+
+        //3. Execute the Query
+        $res = mysqli_query($con, $sql);
+
+        //4. count rows to check whether the user exists or not
+        $count = mysqli_num_rows($res);
+
+        if($count == 1)
+        {
+            //User available and Login success
+            $_SESSION['login'] = "<div = class='success tex-center'>Login Successful.</div>";
+            $_SESSION['user'] = $username; //To check whether the user is logged in or not and logout will unset it
+            //Redirect to Home Page/Dashboard
+            echo "<script>window.location.href='admin/index.php';</script>";
         }
         else
         {

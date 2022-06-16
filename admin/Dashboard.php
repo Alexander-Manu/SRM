@@ -1,3 +1,10 @@
+<?php 
+
+  include('../config/constants.php'); 
+  include('../partials/login-check.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +19,8 @@
     <link rel="stylesheet" href="footer.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="Dashboard.css">
     
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -32,7 +41,7 @@
 <div class="u">
   <nav class="navbar" style="background-color: #e3f2fd;">
     <div class="container-fluid justify-content-center">
-      <a class="navbar-brand" href="#"><img src="images/images.png" alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+      <a class="navbar-brand" href="Dashboard.php"><img src="images/images.png" alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
       <h3 class="text-primary">Student Reporting System</h3>
     </div>
   </nav>
@@ -97,13 +106,14 @@
               <li><a class="dropdown-item" href="Remove_Subject.php">Remove Subject</a></li>
             </ul>
           </li>
-            <a class="nav-link" href="logout.php" role="button" aria-expanded="false">
+            <a class="nav-link" href="../logout.php" role="button" aria-expanded="false">
                 Logout
             </a>
         </ul>  
       </div>
     </div>
   </nav>
+  <br><br> 
 
                 <?php
                     if(isset($_SESSION['login']))
@@ -111,7 +121,14 @@
                         echo $_SESSION['login'];
                         unset($_SESSION['login']);
                     }
+             
+                    if(isset($_SESSION['add']))
+                    {
+                        echo $_SESSION['add'];
+                        unset($_SESSION['add']);
+                    }
                 ?>
+                <br><br>
 
   <div class="container">
     <div class="row" style="padding-top: 30px;">
@@ -155,8 +172,8 @@
         <a href="All_Results.php" class="btn btn-outline-primary shadow btn-lg mx-2 mb-2 vw" role="button">All Results</a>
 
         <h2>Others:</h2>
-        <a href="Add_Class.php" class="btn btn-outline-success shadow btn-lg mx-3 mb-2 vw" role="button">Add Class</a>
-        <a href="Edit_Class.php" class="btn btn-outline-warning shadow btn-lg mx-3 mb-2 vw" role="button">Edit Class</a>
+        <a href="manage-admin.php" class="btn btn-outline-success shadow btn-lg mx-3 mb-2 vw" role="button">Manage Admin</a>
+        <a href="manage-teacher.php" class="btn btn-outline-warning shadow btn-lg mx-3 mb-2 vw" role="button">Manage Teacher</a>
         <a href="Remove_Class.php" class="btn btn-outline-danger shadow btn-lg mx-3 mb-2 vw" role="button">Remove Class</a> <br>
         <a href="Add_Subject.php" class="btn btn-outline-success shadow btn-lg mx-3 mb-2 vw" role="button">Add Subject</a>
         <a href="Edit_Subject.php" class="btn btn-outline-warning shadow btn-lg mx-3 mb-2 vw" role="button">Edit Subject</a>
@@ -164,5 +181,5 @@
     </div>
 </div>    
 
-  <!------Footer------>
-  <?php include('partials/footer.php'); ?>
+    <!------Footer------>
+<?php include('../partials/footer.php'); ?>

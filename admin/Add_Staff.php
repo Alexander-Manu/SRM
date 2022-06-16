@@ -1,3 +1,5 @@
+<?php include('../config/constants.php'); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +14,9 @@
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="Dashboard.css">
+    
     
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -105,20 +110,35 @@
   </div>
 </nav>
   
+<br />
 
+        <?php 
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+
+            if(isset($_SESSION['upload']))
+            {
+                echo $_SESSION['upload'];
+                unset($_SESSION['upload']);
+            }
+        ?>
+<br>
                   <!-- STAFF FORMS -->
 <div class="container formdesign">
-        <form method="post">
+        <form action="connect.php" method="POST" enctype = "multipart/form-data">
             <p class="text-center shadow rounded heading">Staff Admission Forms</p>
             <div id="student" class="information">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputStaffID">STAFF ID:</label>
-                        <input type="text" name="Staff_ID" required="" class="form-control shadow" id="Staff_ID" readonly>
+                        <input type="text" name="Staff_ID" required="" class="form-control shadow" id="Staff_ID">
                     </div>
                     <div class="form-group col-md-6 display">
                         <img src="" alt="" style="width: 150px; height: 120px;">
-                        <a href="#" class="btn btn-primary shadow mx-3 mb-2" role="button">Upload Image</a>
+                        <input type="file" name="image" class="btn btn-primary shadow mx-3 mb-2" id="image">
                     </div>
                 </div>
                 <div class="form-row">
@@ -185,12 +205,16 @@
                         <input type="email" name="Email_Address" required="" class="form-control shadow" id="Email_Address" placeholder="example@info.com">
                     </div>
                 </div>
-    
+                <div class="form-group col-md-6 display">
+                  <label for="inputQualification">Qualification:</label>
+                  <input type="text" name="Qualification" required="" class="form-control shadow" id="Qualification" placeholder="Enter Staff Qualificaiton">
+                </div>
                 <div class="form-row">
                     <div class="form-group col-md-6 display">
                         <label for="inputAdmissionDate">ADMISSION DATE:</label>
                         <input type="date" name="Admission_Date" required="" class="form-control shadow" id="Admission_Date" placeholder="DD-MM-YYYY">
                     </div>
+                    
                     <div class="form-group col-md-6 display">
                         <label for="inputClassAssign">ASSIGN CLASS:</label>
                         <select name="Assign_Class" id="Assign_Class" require="" class="form-control shadow">
@@ -295,22 +319,150 @@
                 </fieldset>
             </div>
         </form>
+<br><br>
+        <!-- <?php
+// //Checked whether the submit button is clicked or not
+//             if(isset($_POST['submit']))
+//             {
+//                 echo "Clicked";
+
+//                 //1. Get value from staff form
+//                 $staff_id = mysqli_real_escape_string($con, $_POST['Staff_ID']);
+
+//                 //Check whether the image is selected or not and set the value for image name accordingly
+//                 //print_r($_FILES['image']);
+
+//                 //die(); //Break the code here
+
+//                 if(isset($_FILES['image']['name']))
+//                 {
+//                     //Upload the image
+//                     //To upload image we need the image name, source path and destination path
+//                     $staff_image = $_FILES['image']['name'];
+                    
+//                     //Upload the image only if image is selected
+//                     if($staff_image != "")
+//                     {
+
+//                         //Auto rename our image
+//                         //Get the extension of the image (jpg, png, gif, etc) e.g "StaffName.jpg"
+//                         $ext = end(explode('.', $staff_image));
+                        
+//                         //Rename image
+//                         $staff_image = "School_Staff_".rand(000, 999).'.'.$ext; // e.g School_Staff_834.jpg
+                        
+
+//                         $source_path = $_FILES['image']['tmp_name'];
+
+//                         $destination_path = "../images/staff/".$staff_image;
+
+//                         //Finally upload the image
+//                         $upload= move_uploaded_file($source_path, $destination_path);
+
+//                         //Check if the image is uploaded or not
+//                         //If the image is not uploaded then we will stop the process and redirect with error message
+//                         if($upload == FALSE)
+//                         {
+//                             //Set message
+//                             $_SESSION['upload'] = "<div class='error tex-center'>Failed to upload Image. </div>";
+//                             //Redirect to add category page
+//                             header('location:'.SITEURL.'admin/Add_Staff.php');
+//                             die();
+//                         }
+//                     }
+
+//                 }
+//                 else
+//                 {
+//                     //Don't upload image and set image value as blank
+//                     $staff_image = "";
+//                 }
+
+//                 $first_name = mysqli_real_escape_string($con, $_POST['First_Name']);
+//                 $last_name = mysqli_real_escape_string($con, $_POST['Last_Name']);
+//                 $gender = mysqli_real_escape_string($con, $_POST['Gender']);
+//                 $birth_date = mysqli_real_escape_string($con, $_POST['D_O_B']);
+//                 $religion = mysqli_real_escape_string($con, $_POST['Religion']);
+//                 $national_id = mysqli_real_escape_string($con, $_POST['National_ID']);
+//                 $nationality = mysqli_real_escape_string($con, $_POST['Country']);
+//                 $city = mysqli_real_escape_string($con, $_POST['City']);
+//                 $address = mysqli_real_escape_string($con, $_POST['Address']);
+//                 $e_mail = mysqli_real_escape_string($con, $_POST['Email_Address']);
+//                 $qualification = mysqli_real_escape_string($con, $_POST['Qualification']);
+//                 $admission_date = mysqli_real_escape_string($con, $_POST['Admission_Date']);
+//                 $class_assigned = mysqli_real_escape_string($con, $_POST['Assign_Class']);
+//                 $father_name = mysqli_real_escape_string($con, $_POST['Fathers_Name']);
+//                 $father_contact = mysqli_real_escape_string($con, $_POST['Fathers_Contact']);
+//                 $father_occupation = mysqli_real_escape_string($con, $_POST['Fathers_Occupation']);
+//                 $father_national_id = mysqli_real_escape_string($con, $_POST['Fathers_NID']);
+//                 $mother_name = mysqli_real_escape_string($con, $_POST['Mothers_Name']);
+//                 $mother_contact = mysqli_real_escape_string($con, $_POST['Mothers_Contact']);
+//                 $mother_occupation = mysqli_real_escape_string($con, $_POST['Mothers_Occupation']);
+//                 $mother_national_id = mysqli_real_escape_string($con, $_POST['Mothers_NID']);
+//                 $marital_status = mysqli_real_escape_string($con, $_POST['Marital_Status']);
+//                 $spouse_name = mysqli_real_escape_string($con, $_POST['Spouse_Name']);
+//                 $spouse_contact = mysqli_real_escape_string($con, $_POST['Spouse_Contact']);
+//                 $spouse_occupation = mysqli_real_escape_string($con, $_POST['Spouse_Occupation']);
+//                 $spouse_national_id = mysqli_real_escape_string($con, $_POST['Spouse_NID']);
+
+
+//                 //2. Create sql query to insert staff into database
+//                 $sql = "INSERT INTO tbl_staff SET
+//                 Staff_ID = '$staff_id',
+//                 image_name = '$staff_image',
+//                 First_Name = '$first_name',
+//                 Last_Name = '$last_name',
+//                 Gender = '$gender',
+//                 D_O_B = '$birth_date',
+//                 Religion = '$religion',
+//                 National_ID = '$national_id',
+//                 Country = '$nationality',
+//                 City = '$city',
+//                 Address = '$address',
+//                 Email_Address = '$e_mail',
+//                 Qualification = '$qualification',
+//                 Admission_Date = '$admission_date',
+//                 Assign_Class = '$class_assigned',
+//                 Fathers_Name = '$father_name',
+//                 Fathers_Contact = '$father_contact',
+//                 Fathers_Occupation = '$father_occupation',
+//                 Fathers_NID = '$father_national_id',
+//                 Mothers_Name = '$mother_name',
+//                 Mothers_Contact = '$mother_contact',
+//                 Mothers_Occupation = '$mother_occupation',
+//                 Mothers_NID = '$mother_national_id',
+//                 Marital_Status = '$marital_status',
+//                 Spouse_Name = '$spouse_name',
+//                 Spouse_Contact = '$spouse_contact',
+//                 Spouse_Occupation = '$spouse_occupation',
+//                 Spouse_NID = '$spouse_national_id'";
+                
+//                 //3. Execute the query and save into database
+//                 $res = mysqli_query($con, $sql);
+
+//                 //4. Check whether the query executed or not and data added or not
+//                 if($res==TRUE)
+//                 {
+//                     //Query executed and staff added
+//                     $_SESSION['add'] = "<div class='success tex-center'>Staff Added Successfully.</div>";
+//                     //Redirect to dashboard page
+//                     header('location:'.SITEURL.'admin/Dashboard.php');
+//                 }
+//                 else
+//                 {
+//                     //Failed to Add Staff
+//                     $_SESSION['add'] = "<div class='error tex-center'>Failed to Add Staff.</div>";
+//                     //Redirect to manage Add Staff page
+//                     header('location:'.SITEURL.'admin/Add_Staff.php');
+//                 }
+//              }
+
+//         ?> -->
+
       </div>
 
 
 
                 <!-- FOOTER -->
-<?php include('partials/footer.php'); ?>
+<?php include('../partials/footer.php'); ?>
 
-<?php
-  //Process the data from Form and Save to Database
-  //Check whether the Add Staff button is clicked or not
-  
-  if(isset($_POST['submit'])){
-    // Button Clicked
-    echo "Button Clicked";
-  }else{
-    // Button not clicked
-    echo "Button not Clicked";
-  }
-?>

@@ -107,7 +107,7 @@
   
                     <!-- STUDENT ADMISSION FORM -->
         <div class="container formdesign">
-            <form method="post">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <p class="text-center shadow rounded heading">Student Admission Forms</p>
                 <div id="student" class="information">
                     <div class="form-row">
@@ -308,7 +308,19 @@
                     </fieldset>
                 </div>
             </form>
+            <?php
+  //Process the data from Form and Save to Database
+  //Check whether the Add Staff button is clicked or not
+  
+  if(isset($_POST['submit'])){
+    // Button Clicked
+    echo "Button Clicked";
+  }else{
+    // Button not clicked
+    echo "Button not Clicked";
+  }
+?>
           </div>
     
            <!-- FOOTER -->
-<?php include('partials/footer.php'); ?>
+<?php include('../partials/footer.php'); ?>

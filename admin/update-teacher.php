@@ -220,5 +220,5 @@
         }
     }
 ?>
-
-<?php include('partials/footer.php'); ?>
+          <!------Footer------>
+<?php include('../partials/footer.php'); ?>

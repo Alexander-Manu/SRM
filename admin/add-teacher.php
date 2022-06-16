@@ -162,7 +162,7 @@
     </div>
 </div>
 
-<?php include('partials/footer.php'); ?>
+<?php include('../partials/footer.php'); ?>
 
 <?php 
     //Process the value from form and save it in Database
