@@ -47,8 +47,8 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="Dashboard.php">Dashboard</a>
         </li>
-        <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Staffs
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -59,8 +59,8 @@
             <li><a class="dropdown-item" href="All_Staff.php">All Staff</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown fst-italic">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Students
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -78,9 +78,10 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="Add_Result.php">Add Results</a></li>
             <li><a class="dropdown-item" href="Edit_Result.php">Edit Results</a></li>
-            <li><a class="dropdown-item" href="Remove_Result.php">Remove Results</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="Print_Result.php">Print Results</a></li>
+            <li><a class="dropdown-item" href="Check_Result.php">Check Results</a></li>
+            <li><a class="dropdown-item" href="Student_Trancript.php">Student Transcript</a></li>
+            <li><a class="dropdown-item" href="Print_Report.php">Print Terminal Report</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

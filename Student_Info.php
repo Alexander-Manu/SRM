@@ -8,7 +8,7 @@
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Add Student-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
-    <link rel="stylesheet" href="Add_Student.css" type="text/css">
+    <link rel="stylesheet" href="Add_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -59,8 +59,8 @@
             <li><a class="dropdown-item" href="All_Staff.php">All Staff</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown  fst-italic">
+          <a class="nav-link dropdown-toggle  active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Students
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -104,10 +104,13 @@
   </div>
 </nav>
   
-                    <!-- STUDENT ADMISSION FORM -->
-        <div class="container formdesign">
+
+  <!--                       STUDENT INFORMATION 
+                THIS PAGE WILL AUTOMATICALLY LOAD WHEN THE USER CLICK ON A STUDENT FROM THE ALL_STUDENT.PHP PAGE -->
+
+        <div class="container">
             <form method="post">
-                <p class="text-center shadow rounded heading">Student Admission Forms</p>
+                <p class="text-center shadow rounded heading">Student Details</p>
                 <div id="student" class="information">
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
@@ -122,18 +125,18 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputFirstName">FIRST NAME:</label>
-                            <input type="text" name="First_Name" required="" class="form-control shadow" id="First_Name" placeholder="Enter First Name...">
+                            <input type="text" name="First_Name" required="" class="form-control shadow" id="First_Name" placeholder="Enter First Name..." readonly>
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputLastName">LAST NAME:</label>
-                            <input type="text" name="Last_Name" required="" class="form-control shadow" id="Last_Name" placeholder="Enter Last Name...">
+                            <input type="text" name="Last_Name" required="" class="form-control shadow" id="Last_Name" placeholder="Enter Last Name..." readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputGender">GENDER:</label>
-                            <select name="Gender" id="Gender" require="" class="form-control shadow">
+                            <select name="Gender" id="Gender" require="" class="form-control shadow" readonly>
                                 <option selected>Select Gender... </option>
                                 <option>Male</option>
                                 <option>Female</option>
@@ -141,14 +144,14 @@
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputD_O_B">DATE OF BIRTH:</label>
-                            <input type="date" name="D_O_B" required="" class="form-control shadow" id="D_O_B" placeholder="DD-MM-YYYY">
+                            <input type="date" name="D_O_B" required="" class="form-control shadow" id="D_O_B" placeholder="DD-MM-YYYY" readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputReligion">RELIGION:</label>
-                            <select name="Religion" id="Religion" require="" class="form-control shadow">
+                            <select name="Religion" id="Religion" require="" class="form-control shadow" readonly>
                                 <option selected>Choose Religion...</option>
                                 <option>Christianity</option>
                                 <option>Islam</option>
@@ -158,29 +161,29 @@
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputNational_ID">NATIONAL ID:</label>
-                            <input type="text" name="National_ID" required="" class="form-control shadow" id="National_ID" placeholder="000-0000-00">
+                            <input type="text" name="National_ID" required="" class="form-control shadow" id="National_ID" placeholder="000-0000-00" readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputCountry">NATIONALITY / COUNTRY:</label>
-                            <input type="text" name="Country" required="" class="form-control shadow" id="Country" placeholder="Enter Country Of Origin...">
+                            <input type="text" name="Country" required="" class="form-control shadow" id="Country" placeholder="Enter Country Of Origin..." readonly>
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputCity">CITY:</label>
-                            <input type="text" name="City" required="" class="form-control shadow" id="City" placeholder="Enter City...">
+                            <input type="text" name="City" required="" class="form-control shadow" id="City" placeholder="Enter City..." readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-4 display">
                             <label for="inputAdmissionDate">ADMISSION DATE:</label>
-                            <input type="date" name="Admission_Date" required="" class="form-control shadow" id="Admission_Date" placeholder="DD-MM-YYYY">
+                            <input type="date" name="Admission_Date" required="" class="form-control shadow" id="Admission_Date" placeholder="DD-MM-YYYY" readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                         <label for="inputClassAdmitted">CLASS ADMITTED:</label>
-                            <select name="Class_Admitted" id="Class_Admitted" require="" class="form-control shadow">
+                            <select name="Class_Admitted" id="Class_Admitted" require="" class="form-control shadow" readonly>
                                 <option selected>  </option>
                                 <option>Primary 1</option>
                                 <option>Primary 2</option>
@@ -195,7 +198,7 @@
                         </div>
                         <div class="form-group col-md-4 display">
                         <label for="inputCurrentClass">CURRENT CLASS:</label>
-                            <select name="Current_Class" id="Current_Class" require="" class="form-control shadow">
+                            <select name="Current_Class" id="Current_Class" require="" class="form-control shadow" readonly>
                                 <option selected>  </option>
                                 <option>Primary 1</option>
                                 <option>Primary 2</option>
@@ -213,100 +216,101 @@
                     <div class="form-row">
                         <div class="form-group col-md-4 display">
                             <label for="inputAddress">ADDRESS:</label>
-                            <input type="text" name="Address" required="" class="form-control shadow" id="Address" placeholder="House No, GPS Address....">
+                            <input type="text" name="Address" required="" class="form-control shadow" id="Address" placeholder="House No, GPS Address..." readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                             <label for="inputPosition">POSITION:</label>
-                            <input type="text" name="Position" required="" class="form-control shadow" id="Position" placeholder="Boys Prefect, Girls Prefect, Basketball Captain....">
+                            <input type="text" name="Position" required="" class="form-control shadow" id="Position" placeholder="Boys Prefect, Girls Prefect, Basketball Captain..." readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                             <label for="inputClub">CLUB:</label>
-                            <input type="text" name="Club" required="" class="form-control shadow" id="Club" placeholder="Enter Last Name...">
+                            <input type="text" name="Club" required="" class="form-control shadow" id="Club" placeholder="Enter Last Name..." readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-4 display">
                             <label for="inputPrizes">PRIZES:</label>
-                            <input type="text" name="Prizes" required="" class="form-control shadow" id="Prizes" placeholder="Example, Best Student....">
+                            <input type="text" name="Prizes" required="" class="form-control shadow" id="Prizes" placeholder="Example, Best Student...." readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                             <label for="inputFathersName">FATHER'S NAME:</label>
-                            <input type="text" name="Fathers_Name" required="" class="form-control shadow" id="Fathers_Name" placeholder="Enter Father's Name...">
+                            <input type="text" name="Fathers_Name" required="" class="form-control shadow" id="Fathers_Name" placeholder="Enter Father's Name..." readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                             <label for="inputFathersContact">FATHER'S CONTACT:</label>
-                            <input type="number" name="Fathers_Contact" required="" class="form-control shadow" id="Fathers_Contact" placeholder="Enter Father's contact...">
+                            <input type="number" name="Fathers_Contact" required="" class="form-control shadow" id="Fathers_Contact" placeholder="Enter Father's contact..." readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputFathersOccupation">FATHER'S OCCUPATION:</label>
-                            <input type="text" name="Fathers_Occupation" required="" class="form-control shadow" id="Fathers_Occupation" placeholder="Banker, Trader....">
+                            <input type="text" name="Fathers_Occupation" required="" class="form-control shadow" id="Fathers_Occupation" placeholder="Banker, Trader..." readonly>
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputFathersNID">FATHER'S NATIONAL ID:</label>
-                            <input type="text" name="Fathers_NID" required="" class="form-control shadow" id="Fathers_NID" placeholder="000-0000-000">
+                            <input type="text" name="Fathers_NID" required="" class="form-control shadow" id="Fathers_NID" placeholder="000-0000-000" readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputMothersName">MOTHER'S NAME:</label>
-                            <input type="text" name="Mothers_Name" required="" class="form-control shadow" id="Mothers_name" placeholder="Enter Mother's Name....">
+                            <input type="text" name="Mothers_Name" required="" class="form-control shadow" id="Mothers_name" placeholder="Enter Mother's Name...." readonly>
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputMothersContact">MOTHER'S CONTACT:</label>
-                            <input type="number" name="Mothers_Contact" required="" class="form-control shadow" id="Mothers_Contact" placeholder="024********">
+                            <input type="number" name="Mothers_Contact" required="" class="form-control shadow" id="Mothers_Contact" placeholder="024********" readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputMothersOccupation">MOTHER'S OCCUPATION:</label>
-                            <input type="text" name="Mothers_Occupation" required="" class="form-control shadow" id="Mothers_Occupation" placeholder="Example, Banker, Teacher....">
+                            <input type="text" name="Mothers_Occupation" required="" class="form-control shadow" id="Mothers_Occupation" placeholder="Example, Banker, Teacher...." readonly>
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputMothersNID">MOTHER'S NATIONAL ID:</label>
-                            <input type="text" name="Mothers_NID" required="" class="form-control shadow" id="Mothers_NID" placeholder="000-0000-000">
+                            <input type="text" name="Mothers_NID" required="" class="form-control shadow" id="Mothers_NID" placeholder="000-0000-000" readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
                             <label for="inputGuardianName">GUARDIAN'S NAME:</label>
-                            <input type="text" name="Guardian_Name" required="" class="form-control shadow" id="Guardian_name" placeholder="Enter Guardian Name....">
+                            <input type="text" name="Guardian_Name" required="" class="form-control shadow" id="Guardian_name" placeholder="Enter Guardian Name..." readonly>
                         </div>
                         <div class="form-group col-md-6 display">
                             <label for="inputGuardianContact">GUARDIAN'S CONTACT:</label>
-                            <input type="number" name="Guardian_Contact" required="" class="form-control shadow" id="Guardian_Contact" placeholder="024********">
+                            <input type="number" name="Guardian_Contact" required="" class="form-control shadow" id="Guardian_Contact" placeholder="024********" readonly>
                         </div>
                     </div>
         
                     <div class="form-row">
                         <div class="form-group col-md-4 display">
                             <label for="inputGuardianOccupation">GUARDIAN OCCUPATION:</label>
-                            <input type="text" name="Guardian_Occupation" required="" class="form-control shadow" id="Guardian_Occupation" placeholder="Example Banker, Teacher....">
+                            <input type="text" name="Guardian_Occupation" required="" class="form-control shadow" id="Guardian_Occupation" placeholder="Example Banker, Teacher...." readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                             <label for="inputGuardianRelatiion">GUARDIAN RELATIONSHIP:</label>
-                            <input type="text" name="Guardian_Relationship" required="" class="form-control shadow" id="Guardian_Relationship" placeholder="Brother, Father.....">
+                            <input type="text" name="Guardian_Relationship" required="" class="form-control shadow" id="Guardian_Relationship" placeholder="Brother, Father..." readonly>
                         </div>
                         <div class="form-group col-md-4 display">
                             <label for="inputGuardianNID">GUARDIAN NATIONAL ID:</label>
-                            <input type="text" name="Guardian_NID" required="" class="form-control shadow" id="Guardian_NID" placeholder="000-0000-000">
+                            <input type="text" name="Guardian_NID" required="" class="form-control shadow" id="Guardian_NID" placeholder="000-0000-000" readonly>
                         </div>
                     </div>
-        
-                </div>
-        
-                <div style="margin: 20px;">
-                    <fieldset class="form-group">
-                        <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="submitstudentinfo" value="ADMIT STUDENT">
-                    </fieldset>
-                </div>
+                </div>  
+                
+          <div style="margin: 20px;">
+              <fieldset class="form-group" id="btnAlign" style="margin-left: 40%">
+                  <input class="btn btn-primary shadow" type="submit" name="back" value="&LeftArrow; BACK">
+                  <input style="margin-left: 20px" class="btn btn-primary shadow" type="submit" name="details" value="PRINT DETAILS">
+              </fieldset>
+            </div>                  
             </form>
+            
           </div>
     
            <!-- FOOTER -->

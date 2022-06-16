@@ -30,6 +30,7 @@
   </head>
   <body>
 
+      <div class="formdesign">
  <nav class="navbar" style="background-color: #e3f2fd;">
   <div class="container-fluid justify-content-center">
     <a class="navbar-brand" href="#"><img src="images/images.png" alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
@@ -78,9 +79,10 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="Add_Result.php">Add Results</a></li>
             <li><a class="dropdown-item" href="Edit_Result.php">Edit Results</a></li>
-            <li><a class="dropdown-item" href="Remove_Result.php">Remove Results</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="Print_Result.php">Print Results</a></li>
+            <li><a class="dropdown-item" href="Check_Result.php">Check Results</a></li>
+            <li><a class="dropdown-item" href="Student_Trancript.php">Student Transcript</a></li>
+            <li><a class="dropdown-item" href="Print_Report.php">Print Terminal Report</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -105,7 +107,8 @@
   
 
                   <!-- STAFF FORMS -->
-<div class="container formdesign">
+    
+<div class="container">
         <form method="post">
             <p class="text-center shadow rounded heading">Staff Admission Forms</p>
             <div id="student" class="information">
@@ -296,7 +299,6 @@
       </div>
 
 
-
                 <!-- FOOTER -->
 <nav class="navbar mt-4 mb-n4 pt-2" style="background-color: #e3f2fd;">
   <div class="container justify-content-center fw-bolder fs-5">
@@ -324,7 +326,7 @@
 </div>
 </nav>
 
-
+</div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   

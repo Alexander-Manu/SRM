@@ -6,7 +6,7 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>All Staff-Reporting Sys.</title>
+    <title>Student Transcript-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Edit_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
@@ -25,17 +25,17 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Edit Staff">
+    <meta property="og:title" content="Student Transcript">
     <meta property="og:type" content="website">
   </head>
   <body>
 
-    <nav class="navbar" style="background-color: #e3f2fd;">
-    <div class="container-fluid justify-content-center">
-        <a class="navbar-brand" href="#"><img src="images/images.png" alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
-        <h3 class="text-primary">Student Reporting System</h3>
-    </div>
-    </nav>
+ <nav class="navbar" style="background-color: #e3f2fd;">
+  <div class="container-fluid justify-content-center">
+    <a class="navbar-brand" href="#"><img src="images/images.png" alt="" width="50" height="50" class="d-inline-block align-text-top"></a>
+    <h3 class="text-primary">Student Reporting System</h3>
+  </div>
+</nav>
 
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #e3f2fd;">   
   <div class="container">
@@ -47,8 +47,8 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="Dashboard.php">Dashboard</a>
         </li>
-        <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Staffs
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -71,8 +71,8 @@
             <li><a class="dropdown-item" href="All_Student.php">All Student</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown fst-italic">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Results
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -105,56 +105,40 @@
 </nav>
   
 
-<div class="container">
+          <div class="container">
                     <form method="post">
-                        <p class="text-center shadow rounded heading">All Staff Information</p>
+                        <p class="text-center shadow rounded heading">Student Transcript</p>
                         <div id="student" class="information">
                             <div class="form-row">
                                 <div class="form-group col-md-6 display">
-                                    <label for="searchStaff">SEARCH STAFF:</label>
-                                    <input type="text" name="Search_Staff" required="" class="form-control shadow " id="Search_Staff" placeholder="Enter id, name...">
+                                    <label for="searchStaff">SEARCH STUDENT:</label>
+                                    <input type="text" name="Search_Student_Transcript" required="" class="form-control shadow " id="Search_Student_Transcript" placeholder="Enter id, name...">
                                 </div>
                                 <div class="form-group col-md-6 display">
                                     
-                                    <input id="btnSubmit" type="submit" name="searchStaffInfo" class="btn btn-outline-primary" value="SEARCH">
+                                    <input id="btnSubmit" type="submit" name="searchStudentTranscript" class="btn btn-outline-primary" value="SEARCH">
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
 
-
                 <div id="table">
-                    <span id="allStaff">ALL STAFF:</span>
-                    <table class="table table-striped table-primary">
-                        <tr>
-                            <th scope="col">ID:</th>
-                            <th scope="col">FIRST NAME:</th>
-                            <th scope="col">LAST NAME:</th>
-                            <th scope="col">GENDER:</th>
-                            <th scope="col">D.O.B.:</th>
-                            <th scope="col">PHONE No:</th>
-                            <th scope="col">ADDRESS:</th>
-                            <th scope="col">EMPLOYED DATE:</th>
-                            <th scope="col">CLASS ASSIGNED:</th>
-                            <th scope="col">RELIGION:</th>
-                            <th scope="col">NATIONALITY:</th>
-                            <th scope="col">NATIONAL ID:</th>
-                            <th scope="col">ACTION:</th>
-                        </tr>
-               <!-- PHP code to pull data from the database base on the table columns above follows here -->
-            <!-- NB: WHEN YOU CLICK ON ANY STAFF FROM THE TABLE, IT WILL DIRECT YOU TO THAT STAFF INFO 
-                    BASE ON THAT STAFF ID -->
-                    </table>
+            <span id="allStaff">STUDENTS TRANSCRIPT:</span>
+
+                <!-- PHP CODE THAT WILL CHECK THE DTUDENT NAME OR ID THE USER ENTERED AND POPULATE THE TRANSCRIPT FOR THE STUDENT FOLLOWS HERE. -->
+        
+            
+
+            <div style="margin: 20px;">
+                    <fieldset class="form-group">
+                        <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="printTranscript" value="PRINT TRANSCRIPT">
+                    </fieldset>
                 </div>
+        </div>
 
-
-
-
-
-
-                <!-- FOOTER -->
-                <nav class="navbar mt-4 mb-n4 pt-2" style="background-color: #e3f2fd;">
+     <!-- FOOTER -->
+     <nav class="navbar mt-4 mb-n4 pt-2" style="background-color: #e3f2fd;">
   <div class="container justify-content-center fw-bolder fs-5">
     <a class="navbar-brand" href="#"><h6>&copy; All Rights Reserved, 2022 - School Reporting System ~ (v1.0)</h6></a>
   </div>

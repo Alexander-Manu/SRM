@@ -6,7 +6,7 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>All Staff-Reporting Sys.</title>
+    <title>All Student-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Edit_Staff.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
@@ -25,7 +25,7 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Edit Staff">
+    <meta property="og:title" content="All Student">
     <meta property="og:type" content="website">
   </head>
   <body>
@@ -47,8 +47,8 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="Dashboard.php">Dashboard</a>
         </li>
-        <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Staffs
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -59,8 +59,8 @@
             <li><a class="dropdown-item" href="All_Staff.php">All Staff</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown fst-italic">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Students
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -107,16 +107,16 @@
 
 <div class="container">
                     <form method="post">
-                        <p class="text-center shadow rounded heading">All Staff Information</p>
+                        <p class="text-center shadow rounded heading">All Student Information</p>
                         <div id="student" class="information">
                             <div class="form-row">
                                 <div class="form-group col-md-6 display">
-                                    <label for="searchStaff">SEARCH STAFF:</label>
-                                    <input type="text" name="Search_Staff" required="" class="form-control shadow " id="Search_Staff" placeholder="Enter id, name...">
+                                    <label for="searchStudent">SEARCH STUDENT:</label>
+                                    <input type="text" name="Search_Student" required="" class="form-control shadow " id="Search_Student" placeholder="Enter id, name...">
                                 </div>
                                 <div class="form-group col-md-6 display">
                                     
-                                    <input id="btnSubmit" type="submit" name="searchStaffInfo" class="btn btn-outline-primary" value="SEARCH">
+                                    <input id="btnSubmit" type="submit" name="searchStudentInfo" class="btn btn-outline-primary" value="SEARCH">
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
 
 
                 <div id="table">
-                    <span id="allStaff">ALL STAFF:</span>
+                    <span id="allStaff">ALL STUDENT:</span>
                     <table class="table table-striped table-primary">
                         <tr>
                             <th scope="col">ID:</th>
@@ -133,18 +133,18 @@
                             <th scope="col">LAST NAME:</th>
                             <th scope="col">GENDER:</th>
                             <th scope="col">D.O.B.:</th>
-                            <th scope="col">PHONE No:</th>
+                            <th scope="col">COUNTRY:</th>
                             <th scope="col">ADDRESS:</th>
-                            <th scope="col">EMPLOYED DATE:</th>
-                            <th scope="col">CLASS ASSIGNED:</th>
-                            <th scope="col">RELIGION:</th>
-                            <th scope="col">NATIONALITY:</th>
-                            <th scope="col">NATIONAL ID:</th>
+                            <th scope="col">DATE ADMITTED:</th>
+                            <th scope="col">CLASS:</th>
+                            <th scope="col">POSITION:</th>
+                            <th scope="col">FATHERS NAME:</th>
+                            <th scope="col">MOTHERS NAME:</th>
                             <th scope="col">ACTION:</th>
                         </tr>
-               <!-- PHP code to pull data from the database base on the table columns above follows here -->
-            <!-- NB: WHEN YOU CLICK ON ANY STAFF FROM THE TABLE, IT WILL DIRECT YOU TO THAT STAFF INFO 
-                    BASE ON THAT STAFF ID -->
+             <!-- PHP code to pull data from the database base on the table columns above follows here -->
+            <!-- NB: WHEN YOU CLICK ON ANY STUDENT FROM THE TABLE, IT WILL DIRECT YOU TO THAT STUDENT INFO 
+                    BASE ON THAT STUDENT ID -->
                     </table>
                 </div>
 

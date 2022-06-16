@@ -6,7 +6,7 @@
     <meta name="keywords" content="TOTAL STUDENTS, TOTAL STAFF​, Quick Links:, Students">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Add Student-Reporting Sys.</title>
+    <title>Edit Student-Reporting Sys.</title>
     <link rel="stylesheet" href="nicepage.css" type="text/css">
     <link rel="stylesheet" href="Add_Student.css" type="text/css">
     <!-- <link rel="stylesheet" href="footer.css" type="text/css"> -->
@@ -25,7 +25,7 @@
 		"logo": "images/default-logo.png"}
     </script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Add Student">
+    <meta property="og:title" content="Edit Student">
     <meta property="og:type" content="website">
   </head>
   <body>
@@ -59,8 +59,8 @@
             <li><a class="dropdown-item" href="All_Staff.php">All Staff</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown fst-italic">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown  fst-italic">
+          <a class="nav-link dropdown-toggle  active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Manage Students
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -104,10 +104,13 @@
   </div>
 </nav>
   
-                    <!-- STUDENT ADMISSION FORM -->
-        <div class="container formdesign">
+ <!-- THIS FORM WILL BE AUTO FILLED FROM THE STudent DATABASE BASE ON THE ID THE USER WILL CLICK FROM EDIT STAFF PAGE
+            NB: THERE SHOULD BE A VALUE ATTRIBUTE IN THE INPUT TAG WHICH WILL CONTAIN THE PHP CODES THAT WILL AUTO GENERATE THE DATA-->
+
+                    <!-- STUDENT FORM -->
+        <div class="container">
             <form method="post">
-                <p class="text-center shadow rounded heading">Student Admission Forms</p>
+                <p class="text-center shadow rounded heading">Student Information</p>
                 <div id="student" class="information">
                     <div class="form-row">
                         <div class="form-group col-md-6 display">
@@ -303,7 +306,7 @@
         
                 <div style="margin: 20px;">
                     <fieldset class="form-group">
-                        <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="submitstudentinfo" value="ADMIT STUDENT">
+                        <input style="margin-left: 43%" class="btn btn-primary shadow" type="submit" name="updatestudentinfo" value="UPDATE STUDENT">
                     </fieldset>
                 </div>
             </form>
